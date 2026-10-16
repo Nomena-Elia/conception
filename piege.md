@@ -14,3 +14,6 @@ Exemple de probleme concret:
 
 ## ETAPE 3
 On pose la quantite dans la table ligne_commande car la quantite est liee a chaque plat commande.
+
+## ETAPE 4
+Non, la cle etrangere n'est pas NOT NULL. Pour recuperer toutes les commandes, il faut utiliser LEFT JOIN ou RIGHT JOIN selon l'ordre dans la requete.

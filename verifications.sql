@@ -20,3 +20,14 @@ JOIN ligne_commande lc
 JOIN plat p 
     ON lc.id_plat = p.id
 GROUP BY lc.id_commande, c.daty, c.id;
+
+-- ETAPE 4
+SELECT 
+    c.id,
+    c.daty,
+    CASE WHEN c.id_client IS NULL THEN 'client de passage'
+    ELSE cl.nom
+    END AS nom_client
+FROM commande c
+LEFT JOIN client cl
+    ON c.id_client = cl.id; 
