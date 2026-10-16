@@ -1,3 +1,5 @@
 # SCHEMA RELATIONNEL
 
-PLAT(**id**, nom, prix) [nouveau]
+CATEGORIE(**id**, label) [nouveau]
+
+PLAT(**id**, nom, prix, #id_categorie) [modifie]
