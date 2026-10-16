@@ -31,3 +31,18 @@ SELECT
 FROM commande c
 LEFT JOIN client cl
     ON c.id_client = cl.id; 
+
+-- ETAPE 5
+SELECT s.nom, s.prenom, t.nombre_commande, t2.ca FROM 
+serveur s JOIN (
+    SELECT s.id, COUNT(c.id) AS nombre_commande FROM serveur s
+    LEFT JOIN commande c ON s.id = c.id_serveur
+    GROUP BY s.id, s.nom, s.prenom
+) AS t ON s.id = t.id
+JOIN (
+    SELECT s.id, SUM(p.prix * lc.quantite) as ca FROM serveur s
+    LEFT JOIN commande c ON s.id = c.id_serveur
+    JOIN ligne_commande lc on c.id = lc.id_commande
+    JOIN plat p ON lc.id_plat = p.id
+    GROUP BY s.id
+) AS t2 ON s.id = t2.id;

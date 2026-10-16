@@ -17,3 +17,8 @@ On pose la quantite dans la table ligne_commande car la quantite est liee a chaq
 
 ## ETAPE 4
 Non, la cle etrangere n'est pas NOT NULL. Pour recuperer toutes les commandes, il faut utiliser LEFT JOIN ou RIGHT JOIN selon l'ordre dans la requete.
+
+## ETAPE 5
+Une table de salle et une commande sont deux choses differentes parce que une table est une entite ou on fait une commande.
+
+Le nom table pose un probleme car c'est un mot cle en SQL.
