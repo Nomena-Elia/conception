@@ -11,3 +11,6 @@ Exemple de probleme concret:
 | --- | -------- | ---- | ------------- |
 | 1   | Romazava | 7000 | Plat malagasy |
 | 2   | Akoho    | 7000 | Plat malgache |
+
+## ETAPE 3
+On pose la quantite dans la table ligne_commande car la quantite est liee a chaque plat commande.

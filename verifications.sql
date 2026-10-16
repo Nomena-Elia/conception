@@ -11,3 +11,12 @@ SELECT c.label, COALESCE(COUNT(p.id), 0) as nombre FROM categorie c
 LEFT JOIN plat p
 ON c.id = p.id_categorie
 GROUP BY p.id_categorie, c.label;
+
+-- ETAPE 3
+SELECT 'Commande ' || c.id || ' du ' || c.daty as label, SUM(lc.quantite * p.prix) as total 
+FROM commande c
+JOIN ligne_commande lc
+    ON c.id = lc.id_commande
+JOIN plat p 
+    ON lc.id_plat = p.id
+GROUP BY lc.id_commande, c.daty, c.id;
